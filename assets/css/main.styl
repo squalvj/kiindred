@@ -21,6 +21,9 @@ body
 	font-family omnesR
 	font-size 14px
 	color $gray
+	
+figure
+	margin 0
 
 p
 	font-family omnesL
@@ -50,6 +53,15 @@ h3
 	font-size 29px
 	font-family omnesM
 
+h1,h2,h3,h4,button
+	font-weight normal
+	
+input:focus
+	outline none
+
+input
+	margin 0
+
 button
 	font-family omnesM
 	font-size 14px
@@ -59,6 +71,8 @@ button
 	border 1px solid black
 	text-transform uppercase
 	transition all .25s ease
+	&:active,&:focus
+		outline none
 	&:hover
 		cursor pointer
 		background black
@@ -69,12 +83,21 @@ button
 		&:hover
 			background #ff7474
 			color white
+	&.white
+		border-color white
+		color white
+		&:hover
+			background white
+			color $red
 	&.round
 		border-radius 60px
 	&.transparent
 		background-color rgba(0,0,0,0)
 
-
+a
+	text-decoration none
+	&:hover
+		text-decoration underline
 
 .container
 	padding-right: 30px;
@@ -84,9 +107,34 @@ button
 	width 902px
 	@media (max-width: 992px)
 		width unset
+
+.container-fluid
+	padding-right: 30px;
+	padding-left: 30px;
+	margin-right: auto;
+	margin-left: auto;
+	width 1048px
+	@media (max-width: 1108px)
+		width unset
+
+.container-partnership
+	padding-right: 30px;
+	padding-left: 30px;
+	margin-right: auto;
+	margin-left: auto;
+	width unset
+	@media (min-width: 768px)
+		padding-left 50px
+		padding-right 50px
+	@media (min-width: 1366px)
+		padding-left 90px
+		padding-right 90px
+		width 1186px
 		
 .outer-container
-	height 850px
+	//height 800px
+	//height 700px
+	min-height 100vh
 	@media(max-width: 576px)
 		min-height 100vh
 		height auto
@@ -97,6 +145,9 @@ button
 
 .rel
 	position relative
+	
+.w100
+	width 100%
 
 .flex
 	display flex
@@ -112,6 +163,8 @@ button
 
 .v-center
 	align-items center
+.j-center
+	justify-content center
 
 .space-b
 	justify-content space-between
@@ -156,6 +209,9 @@ button
 		position absolute
 		top -210px
 		left -70px
+.wrapper-caption-about-us
+	> h1
+		margin-top 90px
 .wrapper-about-text
 	height 100%
 	img
@@ -171,21 +227,31 @@ button
 .wrapper-bg-long
 	background url(../img/bg-long.png)
 	background-size cover
-	min-height calc(100vh * 5)
 	background-position 0px -150px
 	
 .wrapper-text
-	padding 100px 0
+	padding 50px 0
+	h1
+		margin-top 60px
 
 .col
 	width 50%
 	@media(max-width: 576px)
 		width 100%
+	&:first-child
+		&.wrapper-caption
+			padding-left 0
 
 .red-t
 	color #ff7474
 
 // portofolio
+.mobile-bg
+	background url(../img/mobile-text.png)
+	background-size 879px auto
+	background-repeat no-repeat
+	background-position-x 28%
+	background-position-y 70%
 .portofolio-caption
 	h3
 		margin-bottom 0
@@ -230,38 +296,47 @@ button
 	left 0
 	top 50%
 	transform translateY(-50%)
-	width 50%
-	height 468px
+	width 100%
+	@media(min-width: 1024px)
+		height 468px
 	video
+		width 100%
 		position: absolute;
-		width auto
-		height: 100%;
-		transform scale(0.871)
-		top: -5px;
-		// left: -4%;
-		// height: 87.5%;
-		// top: 5%;
-		@media(min-width: 868px)
-			left: -30%
-		@media(min-width: 943px)
-			left: -31.5%
-	img
-		height: 100%;
-		width: auto;
+		@media(min-width: 576px)
+			width: 80.9%;
+			right: 19.4%;
+			top: -11%;
+		@media(min-width: 1024px)
+			width: 84%;
+			top: 19%;
+			right: 19%;
+		@media(min-width: 1200px)
+			width: 98.8%;
+			top: 13.6%;
+			right: 24%;
+		@media(min-width: 1366px)
+			width: 115.2%;
+			top: 7.3%;
+			right: 24.5%;
+	.img
+		height: auto;
+		top 50%
 		position: absolute;
-		right: -100px
-.expert-img
-	img
-		position absolute
-		width unset
-		transform scale(1)
-		left: 0;
-		top: 50%;
-		transform: translateY(-50%);
-		@media (max-width: 1366px)
-			right 40%
-			left unset
-			
+		transform translateY(-50%)
+		width 100%
+		@media(min-width: 576px)
+			width: 140%;
+			right: -10%;
+		@media(min-width: 1024px)
+			width 145%
+			right -50px
+		@media(min-width: 1200px)
+			width 170%
+		@media(min-width: 1366px)
+			right -80px
+			width 200%
+		
+		
 .expert-caption
 	position relative
 	z-index 2
@@ -274,3 +349,283 @@ button
 			padding-right 0
 .expert-container
 	position relative
+	
+
+// website
+.website-container
+	overflow-x hidden
+	background url(../img/telor.png) no-repeat
+	background-size 548px auto
+	background-position-x 100%
+.website
+	justify-content center
+	h3
+		margin-top 0
+		margin-bottom 0
+	p
+		margin 20px 0 40px
+	a
+		font-family omnesM
+		
+.wrapper-website-video
+	position absolute
+	z-index 1
+	left 0
+	top 50%
+	transform translateY(-50%)
+	width 100%
+	img
+		width 100%
+	.img
+		position absolute
+		right 0
+		@media(min-width: 576px)
+			width: 150%;
+			top: 50%;
+			transform: translateY(-50%);
+			right -34%
+		@media(min-width: 768px)
+			width: 150%;
+			top: 50%;
+			transform: translateY(-50%);
+			right -36%
+		@media(min-width: 1024px)
+			width: 200%;
+			right: -84%;
+			
+// social
+.social-container
+	background url(../img/social-text.png)
+	background-repeat no-repeat
+	background-position-y 30%
+	background-position-x 80%
+	background-size 793px auto
+.wrapper-social-video
+	position relative
+	video
+		position: absolute;
+		@media(min-width: 576px)
+			top: 26%
+			width: 30%;
+			right: 21.7%;
+	img
+		width 100%
+	.img
+		position absolute
+		@media(min-width: 576px)
+			width: 180%;
+			left: -95%;
+			top 50%
+			transform translateY(-50%)
+.wrapper-caption
+	padding-left 30px
+	h3
+		margin-top 0
+		margin-bottom 0
+	p
+		margin 27px 0 40px
+		padding-right 50px
+		color #555555
+	a
+		font-family omnesM
+	@media(max-width: 576px)
+		padding-left 0
+		
+// coming soon
+.white
+	color white
+.m0
+	margin 0
+.coming-container
+	min-height 540px
+	background url(../img/kiindred-text.png)
+	background-repeat no-repeat
+	background-size 1144px auto
+	background-position-y 100%
+	background-position-x 30%
+.coming-img
+	img
+		width 100%
+// advertise
+.wrapper-padding
+	padding 70px
+.advertise-outer
+	> *
+		z-index 2
+		position relative
+	&:before
+		position absolute
+		z-index 1
+		width 100%
+		height 100%
+		top 0
+		left 0
+		display block
+		content ''
+		background url(../img/ico/logo.png) no-repeat
+
+.caption-advertise
+	padding-top 100px
+	p
+		letter-spacing 0.7px
+
+.container-grid-advertise
+	margin -15px
+	.grid-item > div
+		margin 15px
+.grid-container
+	display flex
+	flex-wrap wrap
+	.grid-item
+		display flex
+		width calc(100% / 3)
+		@media(max-width: 943px)
+			width calc(100% / 2)
+		@media(max-width: 576px)
+			width 100%
+.advertise-grid
+	background white
+	padding 35px
+	border-radius 10px
+	display flex
+	flex-direction column
+	> *
+		margin 0
+	figure
+		flex 1 0 auto
+		margin-bottom 30px
+	h3
+		margin-bottom 30px
+		font-size 25px
+	img
+		width auto
+		
+.container-grid-advertise
+	margin-top 60px
+	
+.advertise-btn
+	font-size 12px
+	margin 80px 0
+	
+.partnership-section
+	background #f5f5f5
+	padding 100px 0
+	h2
+		margin 0
+		font-family omnesR
+		font-size 24px
+		color $gray
+		text-align center
+
+.list-partner
+	display flex
+	margin-top 50px
+	overflow-x hidden
+	align-items center
+	justify-content space-between
+	@media(max-width: 1248px)
+		flex-wrap wrap
+	figure
+		width calc(100% / 8)
+		text-align center
+		@media (max-width: 1248px)
+			width calc(100% / 4)
+		@media (max-width: 576px)
+			width calc(100% / 2)
+		img
+			width auto
+			transform scale(0.8)
+
+// section follow 
+.section-follow
+	height 728px
+	overflow hidden
+	@media(max-width: 576px)
+		height auto
+
+.follow-img-wrapper
+	img
+		width: 110%;
+		top: -40%;
+		right: 0;
+		position: absolute;
+		@media(max-width: 993px)
+			top -20%
+.follow
+	color $gray
+	h3
+		color $gray
+	p
+		margin-bottom 45px
+	.wrapper-button
+		margin-left -8px
+		@media(max-width: 576px)
+			margin-left 0
+			
+// signup
+.outer-signup
+	padding 100px 0
+	background #f5f5f5
+	h1
+		margin 0
+	p
+		margin 30px 0
+	form
+		padding 20px 0
+		text-align center
+		display flex
+		justify-content center
+		@media(max-width: 768px)
+			flex-wrap wrap
+	input
+		padding 10px 15px
+		width 220px
+		border 1px solid $gray
+		color $gray
+		margin 0 7px
+		height 100%
+		font-family omnesM
+		font-size 16px
+		border-radius 5px
+		@media(max-width: 768px)
+			width 100%
+			margin 5px 0
+			&:last-of-type
+				margin-bottom 10px
+		@media(max-width: 576px)
+			width 100%
+	button
+		text-transform: capitalize;
+		border: none;
+		color: #fff;
+		font-size: 16px;
+		font-family: omnesM;
+		padding: 9px 45px;
+		border-radius: 25px;
+		font-weight: normal;
+		@media(max-width: 768px)
+			width 100%	
+		&:hover
+			background linear-gradient($red, $orange)
+			color white
+::placeholder
+	color rgba($gray, 50%)
+	
+
+footer
+	padding 50px 0
+	.flex
+		align-items baseline
+	p
+		margin-bottom 0
+		font-size 19px
+		font-family omnesR
+		font-weight normal
+		margin-top 60px
+	a
+		color $gray
+		font-weight normal
+		font-size 19px
+		font-family omnesR
+		margin 0 10px
+
