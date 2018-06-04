@@ -21,6 +21,9 @@ body
 	font-family omnesR
 	font-size 14px
 	color $gray
+	transition transform .50s ease
+	&.open-nav
+		transform translateX(calc(-100% + 95px))
 	
 figure
 	margin 0
@@ -59,6 +62,11 @@ h1,h2,h3,h4,button
 input:focus
 	outline none
 
+*, *:before, *:after
+	box-sizing: border-box;
+
+
+
 input
 	margin 0
 
@@ -93,6 +101,9 @@ button
 		border-radius 60px
 	&.transparent
 		background-color rgba(0,0,0,0)
+
+.uppercase
+	text-transform uppercase
 
 a
 	text-decoration none
@@ -133,7 +144,7 @@ a
 		
 .outer-container
 	//height 800px
-	height 700px
+	min-height 700px
 	//min-height 100vh
 	@media(max-width: 576px)
 		min-height 90vh
@@ -142,6 +153,8 @@ a
 	// 	height 100vh
 .hidden
 	visibility hidden
+	@media(max-width: 576px)
+		display none
 
 .rel
 	position relative
@@ -171,13 +184,127 @@ a
 
 .text-center
 	text-align center
+	
+
+// header
+header
+	position fixed
+	top 0
+	left 0
+	width 100%
+	padding 15px 100px
+	background rgba(black, 20%)
+	z-index 3
+	ul
+		display flex
+		list-style-type none
+		padding 0
+		justify-content flex-end
+		li
+			padding 0 20px
+			&:first-child
+				padding-left 0
+			&:last-child
+				padding-right 0
+			a
+				font-family omnesM
+				font-weight normal
+				font-size 16px
+				color white
+				transition all .25s ease
+				@media (max-width: 576px)
+					font-size 14px
+				&:hover
+					text-decoration none
+				&.promote
+					border 1px solid white
+					border-radius: 45px;
+					padding: 10px 35px;
+					&:hover
+						background white
+						color $gray
+					@media (max-width: 576px)
+						padding 10px 30px
+						
+	@media (max-width: 768px)
+		padding-left 25px
+		padding-right 25px
+		text-align right
+	@media (max-width: 600px)
+		#nav
+			display none
+			position: fixed;
+			height: 100%;
+			width: 100%
+			background: linear-gradient($red, $orange);
+			top 0
+			left 0
+			padding-top 60px
+		ul
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			li
+				padding 0
+				margin 15px 0
+		
+.opacity-0
+	opacity 0
+.visible
+	visibility: visible;
+	opacity: 1;
+	transition: opacity 2s linear;
+.hidden2
+	visibility: hidden;
+	opacity: 0;
+	transition: visibility 0s 2s, opacity 2s linear;
+.hamburger
+	display none
+	border none
+	background rgba(0,0,0,0)
+	padding 0
+	position relative
+	z-index 99
+	&:hover
+		background rgba(0,0,0,0)
+		outline none
+	@media (max-width: 600px)
+		display inline-block
+	
+	&.is-active .line
+		&:nth-child(2)
+			opacity: 0;
+		&:nth-child(1)
+			-webkit-transform: translateY(9px) rotate(45deg);
+			-ms-transform: translateY(9px) rotate(45deg);
+			-o-transform: translateY(9px) rotate(45deg);
+			transform: translateY(9px) rotate(45deg);
+		&:nth-child(3)
+			-webkit-transform: translateY(-13px) rotate(-45deg);
+			-ms-transform: translateY(-13px) rotate(-45deg);
+			-o-transform: translateY(-13px) rotate(-45deg);
+			transform: translateY(-13px) rotate(-45deg);
+			
+	.line
+		width: 30px;
+		height: 3px;
+		background-color: #ecf0f1;
+		display: block;
+		margin: 8px auto;
+		-webkit-transition: all 0.3s ease-in-out;
+		-o-transition: all 0.3s ease-in-out;
+		transition: all 0.3s ease-in-out;
+
+
 // welcome section----
 .welcome-section
 	background url(../img/bg-top.jpg)
 	background-repeat no-repeat
 	background-size cover
 	background-position center
-	min-height 100vh
+	//min-height 100vh
+	.outer-container
+		min-height 100vh
 .logo-welcome
 	width 240px
 	height auto
@@ -290,14 +417,21 @@ a
 		@media(max-width: 576px)
 			display none
 		@media(min-width: 993px)
-			top: 54px;
-			height: 340px;
-			left: 44px;
+			// top: 54px;
+			// height: 340px;
+			// left: 44px;
+			top: 40px;
+			height: 341px;
+			left: 39px;
 		
 .wrapper-app-video
 	position absolute
 	top 0
 	left 0
+	@media (max-width: 576px)
+		position relative
+		min-height 305px
+		
 			
 // expert series
 .expert-series
@@ -326,17 +460,17 @@ a
 			right: 19.4%;
 			top: -11%;
 		@media(min-width: 1024px)
-			width: 84%;
-			top: 19%;
-			right: 19%;
+			width: 83.7%;
+			top: 21.1%;
+			right: 18.5%;
 		@media(min-width: 1200px)
 			width: 98.8%;
-			top: 13.6%;
+			top: 15.9%
 			right: 24%;
 		@media(min-width: 1366px)
-			width: 115.2%;
-			top: 7.3%;
-			right: 24.5%;
+			width: 116%;
+			top: 10.2%;
+			right: 22.8%;
 		@media(max-width: 576px)
 			display none
 	.img
@@ -390,7 +524,6 @@ a
 		overflow hidden
 		align-items unset
 		padding-top 20px
-		padding-bottom 70px
 .website
 	justify-content center
 	// @media(max-width: 576px)
@@ -418,9 +551,9 @@ a
 	transform translateY(-50%)
 	width 100%
 	@media(max-width: 576px)
-		position: absolute;
+		position: relative;
 		z-index: 1;
-		height 302px
+		height 215px
 		left: 0;
 		top 0
 		transform unset
@@ -459,6 +592,8 @@ a
 	background-size 793px auto
 	@media(max-width: 576px)
 		overflow hidden
+		flex-direction column
+		padding-top 50px
 	> div
 		@media(max-width: 576px)
 			flex-direction column-reverse
@@ -466,6 +601,7 @@ a
 	position relative
 	@media(max-width: 576px)
 		margin-top 50px
+		min-height 197px
 	video
 		position: absolute;
 		@media(max-width: 576px)
@@ -519,7 +655,8 @@ a
 	background-position-x 30%
 	@media(max-width: 576px)
 		min-height 440px
-		margin-bottom 30px
+		flex-direction column
+		padding 70px 0
 .coming-img
 	img
 		width 100%
@@ -660,6 +797,9 @@ a
 .outer-signup
 	padding 100px 0
 	background #f5f5f5
+	@media (max-width: 576px)
+		padding 70px 0
+		
 	h1
 		margin 0
 	p
@@ -674,7 +814,7 @@ a
 	input
 		padding 10px 15px
 		width 220px
-		border 1px solid $gray
+		border 1px solid rgba($gray, 50%)
 		color $gray
 		margin 0 7px
 		height 100%
