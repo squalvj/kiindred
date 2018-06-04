@@ -86,11 +86,12 @@ button
 		width unset
 		
 .outer-container
-	height 100vh
+	height 850px
 	@media(max-width: 576px)
 		min-height 100vh
 		height auto
-
+	@media(min-height: 900px)
+		height 100vh
 .hidden
 	visibility hidden
 
@@ -189,7 +190,7 @@ button
 	h3
 		margin-bottom 0
 	p
-		margin 20px 0 60px
+		margin 20px 0 40px
 		padding-right 50px
 		@media (max-width: 576px)
 			padding-right 0
@@ -207,8 +208,44 @@ button
 		left 0
 		@media (min-width: 1366px)
 			left 100px
+	video
+		position: absolute;
+		top: 11.8%;
+		left: 9.5%;
+		width: 42.5%;
+		@media(min-width: 993px)
+			top: 54px;
+			height: 340px;
+			left: 44px;
+		
+.wrapper-app-video
+	position absolute
+	top 0
+	left 0
 			
 // expert series
+.wrapper-expert-video
+	position absolute
+	z-index 1
+	left 0
+	top 50%
+	transform translateY(-50%)
+	width 50%
+	height 100%
+	video
+		position: absolute;
+		width auto
+		height: 100%;
+		transform: scale(1.74);
+		top: -5px;
+		@media(min-width: 943px)
+			left: -31.5%
+	img
+		height: 100%;
+		width: auto;
+		position: absolute;
+		left: -50%;
+		transform: scale(2);
 .expert-img
 	img
 		position absolute
@@ -222,6 +259,8 @@ button
 			left unset
 			
 .expert-caption
+	position relative
+	z-index 2
 	h3
 		margin-top 0
 	p
