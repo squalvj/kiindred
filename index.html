@@ -10,7 +10,7 @@
 
         <link rel="stylesheet" href="assets/css/normalize.css">
         <link rel="stylesheet" href="assets/css/jquery.fullpage.min.css">
-        <link rel="stylesheet" href="assets/css/main.css">
+        <link rel="stylesheet" href="assets/css/main.css?ver=3">
     </head>
 
     <body>
@@ -27,9 +27,9 @@
                 </div>
             </div>
             <div data-anchor-name="About" class="section">
-                <div class="wrapper-about outer-container flex-col">
+                <div class="wrapper-about outer-container flex-col space-b">
                     <div class="wrapper-container flex v-center wrapper-about-text">
-                        <div class="container text-center">
+                        <div class="container text-center wrapper-caption-about-us">
                             <h1>About Us</h1>
                             <p>After sharing our new parenting experiences, we soon realised that <br>there was a huge opportunity to make the early stages of parenting a <br>lot easier and adaptive for the modern day parent. 2 years down the <br>track and a few sleepless nights later… Kiindred the app is here!</p>
                             <p>We hope it will give you the guidance and support you need, as you <br>embark on this exciting new parenting journey!</p>
@@ -41,6 +41,7 @@
                         <div class="container flex space-b">
                             <div class="wrapper-phone rel">
                                 <img src="assets/img/phone.png">
+                                <img class="hidden" src="assets/img/phone.png">
                             </div>
                             <h2>Tailored expert guidance, support & inspiration<br>
                             for every stage of your new parenting journey</h2>
@@ -50,7 +51,7 @@
             </div>
 
             <div class="wrapper-bg-long section" data-anchor-name="Portofolio">
-                <div class="outer-container">
+                <div class="outer-container mobile-bg">
                     <div class="container">
                         <div class="wrapper-text text-center">
                             <h1>Our Portofolio</h1>
@@ -59,30 +60,38 @@
                     </div>
 
                     <div class="container flex v-center">
-                        <div class="portofolio-caption col flex-col space-b">
+                        <div class="portofolio-caption col flex-col">
                             <h3 class="red-t">Mobile App</h3>
                             <p>Default text about how kiindred is awesome and everyone should buy it, share it and get involved. It contains a lot of stuff about babies, kids and babies.</p>
                             <div class="wrapper-button">
-                                <button class="red round transparent">
-                                    Learn More
-                                </button>
+                                <a href="#">
+                                    <img src="assets/img/app-store.png">
+                                </a>
                             </div>
                         </div>
 
                         <div class="col portofolio-mobile-app">
                             <img class="hidden" src="assets/img/portofolio-phone.png">
-                            <img class="img" src="assets/img/portofolio-phone.png">
+                            <div class="wrapper-app-video">
+                                <img src="assets/img/portofolio-phone.png">
+                                <video src="assets/video/app.mp4" autoplay loop></video>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="outer-container v-center expert-container flex">
-                    <div class="expert-series flex container">
-                        <div class="col expert-img">
-                            <img class="img" src="assets/img/expert-series.png">
+                    <div class="expert-series flex container rel">
+                        <div class="col expert-img rel">
+                            <div class="wrapper-expert-video">
+                                <img class="img" src="assets/img/expert-series.png">
+                                <video src="assets/video/expert.mp4" autoplay loop></video>
+                                <img class="hidden w100" src="assets/img/expert-series.png">
+                            </div>
+
                         </div>
 
-                        <div class="expert-caption col flex-col space-b">
+                        <div class="expert-caption col flex-col wrapper-caption">
                             <h3 class="red-t">Expert Series</h3>
                             <p>Default text about how kiindred is awesome and everyone should buy it, share it and get involved. It contains a lot of stuff about babies, kids and babies.</p>
                             <div class="wrapper-button">
@@ -93,8 +102,245 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="outer-container v-center website-container flex">
+                    <div class="website flex container rel">
+                        <div class="wrapper-caption col flex-col">
+                            <h3 class="red-t">Website</h3>
+                            <p>Default text about how kiindred is awesome and everyone should buy it, share it and get involved. It contains a lot of stuff about babies, kids and babies.</p>
+                            <div class="wrapper-button">
+                                <a href="#" class="red-t">COMING SOON</a>
+                            </div>
+                        </div>
+
+                        <div class="col rel">
+                            <img class="hidden w100 webset-img" src="assets/img/website.png">
+                            <div class="wrapper-website-video">
+                                <img class="img" src="assets/img/website.png">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="outer-container v-center social-container flex">
+                    <div class="flex container rel">
+                        <div class="col rel">
+                            <div class="wrapper-social-video">
+                                <img class="img" src="assets/img/social.png">
+                                <video src="assets/video/social.mp4" autoplay loop></video>
+                                <img class="hidden w100" src="assets/img/social.png">
+                            </div>
+                        </div>
+
+                        <div class="social wrapper-caption col flex-col">
+                            <h3 class="red-t">Social</h3>
+                            <p>Default text about how kiindred is awesome and everyone should buy it, share it and get involved. It contains a lot of stuff about babies, kids and babies.</p>
+                            <div class="wrapper-button">
+                                <button class="red round transparent">
+                                    Learn More
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="coming-container v-center flex">
+                    <div class="flex container">
+                        <div class="col wrapper-caption flex-col">
+                            <h3 class="red-t">Coming Soon</h3>
+                            <p>Default text about how kiindred is awesome and everyone should buy it, share it and get involved. It contains a lot of stuff about babies, kids and babies.</p>
+                        </div>
+
+                        <div class="col flex v-center coming-img">
+                            <img src="assets/img/coming.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section" data-anchor-name="Advertise">
+                <div class="outer-container advertise-outer gradient rel">
+                    <div class="container">
+                        <div class="caption-advertise rel text-center">
+                            <h1 class="white">Advertise With Us</h1>
+                            <p class="white">Feel like your business could benefit from collaborating with kiindred?</p>
+                            <p class="white m0">We'd love to hear from you.</p>
+                        </div>
+                    </div>
+
+                    <div class="container-fluid">
+                        <div class="grid-container container-grid-advertise">
+                            <div class="grid-item text-center">
+                                <div class="advertise-grid">
+                                    <figure>
+                                        <img src="assets/img/ico/brand.png">
+                                    </figure>
+                                    <h3>Brand Partnership</h3>
+                                    <p>Information about specific advertising option. Slightly more text to fill out the box</p>
+                                </div>
+                            </div>
+
+                            <div class="grid-item text-center">
+                                <div class="advertise-grid">
+                                    <figure>
+                                        <img src="assets/img/ico/affiliate.png">
+                                    </figure>
+                                    <h3>Affiliate Marketing</h3>
+                                    <p>Information about specific advertising option. Slightly more text to fill out the box</p>
+                                </div>
+                            </div>
+
+                            <div class="grid-item text-center">
+                                <div class="advertise-grid">
+                                    <figure>
+                                        <img src="assets/img/ico/social.png">
+                                    </figure>
+                                    <h3>Social & Influencer</h3>
+                                    <p>Information about specific advertising option. Slightly more text to fill out the box</p>
+                                </div>
+                            </div>
+
+                            <div class="grid-item text-center">
+                                <div class="advertise-grid">
+                                    <figure>
+                                        <img src="assets/img/ico/native.png">
+                                    </figure>
+                                    <h3>Native</h3>
+                                    <p>Information about specific advertising option. Slightly more text to fill out the box</p>
+                                </div>
+                            </div>
+
+                            <div class="grid-item text-center">
+                                <div class="advertise-grid">
+                                    <figure>
+                                        <img src="assets/img/ico/content.png">
+                                    </figure>
+                                    <h3>Content Production</h3>
+                                    <p>Information about specific advertising option. Slightly more text to fill out the box</p>
+                                </div>
+                            </div>
+
+                            <div class="grid-item text-center">
+                                <div class="advertise-grid">
+                                    <figure>
+                                        <img src="assets/img/ico/display.png">
+                                    </figure>
+                                    <h3>Display & Listing</h3>
+                                    <p>Information about specific advertising option. Slightly more text to fill out the box</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex j-center">
+                            <button class="white round transparent advertise-btn">GET IN TOUCH</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section partnership-section" data-anchor-name="partnership">
+                <div class="container-partnership">
+                    <h2>Join other brands we partnership with</h2>
+                    <div class="list-partner">
+                        <figure>
+                            <img src="assets/img/ico/sparkle.png">
+                        </figure>
+
+                        <figure>
+                            <img src="assets/img/ico/pigeon.png">
+                        </figure>
+
+                        <figure>
+                            <img src="assets/img/ico/heart.png">
+                        </figure>
+
+                        <figure>
+                            <img src="assets/img/ico/ruby.png">
+                        </figure>
+
+                        <figure>
+                            <img src="assets/img/ico/blc.png">
+                        </figure>
+
+                        <figure>
+                            <img src="assets/img/ico/evo.png">
+                        </figure>
+
+                        <figure>
+                            <img src="assets/img/ico/ilc.png">
+                        </figure>
+
+                        <figure>
+                            <img src="assets/img/ico/moogoo.png">
+                        </figure>
+                    </div>
+                </div>
             </div>
         </div>
+
+        <div class="section" data-anchor-name="follow">
+            <div class="section-follow v-center flex">
+                <div class="container">
+                    <div class="flex">
+                        <div class="col follow-img-wrapper rel">
+                            <img class="img" src="assets/img/follow-phone.png">
+                            <img class="hidden" src="assets/img/follow-phone.png">
+                        </div>
+                        <div class="col">
+                            <div class="wrapper-caption follow">
+                                <h3 class="red-t">Follow Us</h3>
+                                <p>Join the fun! Get access to exclusive offers by connecting with us on social media today!</p>
+                                <div class="wrapper-button">
+                                    <a href="#">
+                                        <img src="assets/img/ig-btn.png">
+                                    </a>
+
+                                    <a href="#">
+                                        <img src="assets/img/fb-btn.png">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section" data-anchor-name="signup">
+            <div class="outer-signup flex v-center">
+                <div class="container sign-up">
+                    <h1 class="text-center">Sign Up</h1>
+                    <p class="text-center">Get the latest news from Kiindred by signing up today!</p>
+                    <form action="#" method="GET">
+                        <input type="text" placeholder="Full Name">
+                        <input type="email" placeholder="Email Address">
+                        <button class="gradient" type="submit">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <div class="container-fluid">
+                <div class="flex space-b">
+                    <div class="flex kiri">
+                        <a href="#">Get in Touch</a>
+                        <a href="#">FAQS</a>
+                        <a href="#">Terms & Policies</a>
+                    </div>
+
+                    <div class="flex kanan">
+                        <a href="#"><img src="assets/img/ico/ig-footer.png"></a>
+                        <a href="#"><img src="assets/img/ico/fb-footer.png"></a>
+                        <a href="#">Follow Us</a>
+                    </div>
+                </div>
+
+                <div class="copyright text-center">
+                    <p>© 2018 Kiindred | 46-52 Meagher Street, Chippendale, NSW 2008</p>
+                </div>
+            </div>
+        </footer>
         
         <script type="text/javascript" src="assets/js/dev-dist.js"></script>
         <script type="text/javascript" src="assets/js/main-dist.js"></script>
