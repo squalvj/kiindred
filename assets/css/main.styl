@@ -91,7 +91,8 @@ button
 		min-height 100vh
 		height auto
 
-
+.hidden
+	visibility hidden
 
 .rel
 	position relative
@@ -189,11 +190,44 @@ button
 		margin-bottom 0
 	p
 		margin 20px 0 60px
+		padding-right 50px
+		@media (max-width: 576px)
+			padding-right 0
+			
 .portofolio-mobile-app
+	position relative
 	@media(max-width: 576px)
 		margin-top 50px
 	img
 		width 100%
 		height auto
-
-
+	.img
+		position absolute
+		top 0
+		left 0
+		@media (min-width: 1366px)
+			left 100px
+			
+// expert series
+.expert-img
+	img
+		position absolute
+		width unset
+		transform scale(1)
+		left: 0;
+		top: 50%;
+		transform: translateY(-50%);
+		@media (max-width: 1366px)
+			right 40%
+			left unset
+			
+.expert-caption
+	h3
+		margin-top 0
+	p
+		margin: 20px 0 60px;
+		padding-right: 50px;
+		@media(max-width: 576px)
+			padding-right 0
+.expert-container
+	position relative
