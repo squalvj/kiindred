@@ -10,6 +10,10 @@ util = {
 		var w = $(window).width();
 		return (w <= 576) ? true : false;
 	},
+	checkTab: function(){
+		var w = $(window).width();
+		return (w <= 768) ? true : false;
+	},
 	reveal: function(){
 		window.sr = ScrollReveal();
 		sr.reveal('.reveal', 
@@ -53,7 +57,7 @@ navbar = {
 
 	headerClick: function(){
 		$(".header-click").click(function(event) {
-			if (util.checkMobile()){
+			if (util.checkMobile() || util.checkTab()){
 				$("#nav").fadeOut('400')
 				$(".hamburger").removeClass('is-active')
 			}

@@ -350,6 +350,8 @@ header
 	min-height 235px
 	h2
 		text-align right
+		@media(max-width: 576px)
+			text-align center
 .gradient
 	background linear-gradient($orange, $red)
 	
@@ -875,5 +877,51 @@ footer
 			text-align left
 			p
 				font-size 16px
+				
+
+// landscape mobile
+@media only screen and (min-device-width: 480px) and (max-device-width: 812px) and (orientation: landscape)
+	.welcome-section
+		.outer-container
+			min-height 700px
+	.wrapper-phone
+		img
+			display none
 			
+
+// ipad portrait
+@media only screen  and (min-device-width : 768px) and (max-device-width : 1024px)
+	.about-gradient h2
+		padding-left 270px
+	.wrapper-phone img
+		top -180px
+		
+// iphone
+@media only screen and (min-device-width : 375px) and (max-device-width : 667px)
+	.wrapper-phone
+		display none
+			
+// iphone landscape
+@media only screen and (min-device-width : 375px) and (max-device-width : 667px) and (orientation : landscape)
+	header #nav
+		display: none;
+		position: fixed;
+		height: 100%;
+		width: 100%;
+		background: -webkit-gradient(linear, left top, left bottom, from(#ff445c), to(#f4695c));
+		background: -webkit-linear-gradient(#ff445c, #f4695c);
+		background: -o-linear-gradient(#ff445c, #f4695c);
+		background: linear-gradient(#ff445c, #f4695c);
+		top: 0;
+		left: 0;
+		padding-top: 60px;
+	.hamburger
+		display inline-block
+	header
+		ul
+			flex-direction column
+			align-items center
+			li
+				padding 0
+				margin 15px 0
 
