@@ -10,6 +10,7 @@
 
         <link rel="stylesheet" href="assets/css/normalize.css">
         <link rel="stylesheet" href="assets/css/jquery.fullpage.min.css">
+        <link rel="stylesheet" href="assets/css/loader.css">
         <link rel="stylesheet" href="assets/css/main.css?ver=5">
     </head>
 
@@ -79,7 +80,7 @@
                             <p>Default text about how kiindred is awesome and everyone should buy it, share it and get involved. It contains a lot of stuff about babies, kids and babies.</p>
                             <div class="wrapper-button">
                                 <a href="#">
-                                    <img src="assets/img/app-store.png">
+                                    <img class="app-store-btn" src="assets/img/app-store.png">
                                 </a>
                             </div>
                         </div>
@@ -88,7 +89,7 @@
                             <img class="hidden" src="assets/img/portofolio-phone.png">
                             <div class="wrapper-app-video">
                                 <img src="assets/img/portofolio-phone.png">
-                                <video src="assets/video/app.mp4" muted loop></video>
+                                <video src="https://objects-us-west-1.dream.io/dialogue-regular-backup/app.mp4" muted loop></video>
                             </div>
                         </div>
                     </div>
@@ -99,7 +100,7 @@
                         <div class="col expert-img rel reveal">
                             <div class="wrapper-expert-video">
                                 <img class="img" src="assets/img/expert-series.png">
-                                <video src="assets/video/expert.mp4" muted loop></video>
+                                <video src="https://objects-us-west-1.dream.io/dialogue-regular-backup/expert.mp4" muted loop></video>
                                 <img class="hidden w100" src="assets/img/expert-series.png">
                             </div>
 
@@ -141,7 +142,7 @@
                         <div class="col rel reveal">
                             <div class="wrapper-social-video">
                                 <img class="img" src="assets/img/social.png">
-                                <video src="assets/video/social.mp4" muted loop></video>
+                                <video src="https://objects-us-west-1.dream.io/dialogue-regular-backup/social.mp4" muted loop></video>
                                 <img class="hidden w100" src="assets/img/social.png">
                             </div>
                         </div>
@@ -187,7 +188,7 @@
                             <div class="grid-item box text-center">
                                 <div class="advertise-grid">
                                     <figure>
-                                        <img src="assets/img/ico/brand.png">
+                                        <img class="brand" src="assets/img/ico/brand.png">
                                     </figure>
                                     <h3>Brand Partnership</h3>
                                     <p>Information about specific advertising option. Slightly more text to fill out the box</p>
@@ -321,15 +322,22 @@
         </div>
 
         <div class="section" data-anchor-name="signup">
-            <div class="outer-signup flex v-center">
+            <div class="outer-signup flex v-center rel">
                 <div class="container sign-up">
                     <h1 class="text-center">Sign Up</h1>
                     <p class="text-center">Get the latest news from Kiindred by signing up today!</p>
-                    <form action="#" method="GET">
-                        <input type="text" placeholder="Full Name">
-                        <input type="email" placeholder="Email Address">
-                        <button class="gradient" type="submit">Submit</button>
+                    <form id="subs" method="GET">
+
+                        <input required name="name" type="text" placeholder="Full Name">
+                        <input required name="email" type="email" placeholder="Email Address">
+                        <button id="sbmt" class="gradient" type="submit">Submit</button>
                     </form>
+                    <div class="status">
+                        <span class="d-none" id="response">
+                            
+                        </span>
+                        <div class="lds-ellipsis loader hidden"><div></div><div></div><div></div><div></div></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -345,7 +353,7 @@
 
                     <div class="flex kanan">
                         <a href="#"><img src="assets/img/ico/ig-footer.png"></a>
-                        <a href="#"><img src="assets/img/ico/fb-footer.png"></a>
+                        <a href="#"><img class="facebook" src="assets/img/ico/fb-footer.png"></a>
                         <a href="#">Follow Us</a>
                     </div>
                 </div>

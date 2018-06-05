@@ -76,7 +76,7 @@ button
 	font-weight normal
 	padding 13px 60px
 	background white
-	border 1px solid black
+	border 2px solid black
 	text-transform uppercase
 	transition all .25s ease
 	&:active,&:focus
@@ -185,10 +185,13 @@ a
 .text-center
 	text-align center
 	
+.d-none
+	display none
+	
 
 // header
 header
-	position fixed
+	position absolute
 	top 0
 	left 0
 	width 100%
@@ -217,7 +220,7 @@ header
 				&:hover
 					text-decoration none
 				&.promote
-					border 1px solid white
+					border 2px solid white
 					border-radius: 45px;
 					padding: 10px 35px;
 					&:hover
@@ -230,13 +233,14 @@ header
 		padding-left 25px
 		padding-right 25px
 		text-align right
+		position fixed
 	@media (max-width: 600px)
 		#nav
 			display none
 			position: fixed;
 			height: 100%;
 			width: 100%
-			background: linear-gradient($red, $orange);
+			background: linear-gradient($orange,$red);
 			top 0
 			left 0
 			padding-top 60px
@@ -327,6 +331,8 @@ header
 	left calc(50% - 13px)
 	bottom 70px
 	transform translateY(-50%)
+	img
+		width 24px
 	@media(max-width: 576px)
 		bottom 20px
 		
@@ -337,6 +343,8 @@ header
 		position absolute
 		top -210px
 		left -70px
+		@media(max-width: 993px)
+			left -290px
 	@media(max-width: 576px)
 		display none
 .wrapper-caption-about-us
@@ -345,6 +353,8 @@ header
 .wrapper-about-text
 	height 100%
 	img
+		width 46px
+		height auto
 		margin 40px 0
 .about-gradient
 	min-height 235px
@@ -380,6 +390,8 @@ header
 	color #ff7474
 
 // portofolio
+.app-store-btn
+	width 163px
 .mobile-bg
 	background url(../img/mobile-text.png)
 	background-size 879px auto
@@ -716,7 +728,9 @@ header
 		margin-bottom 30px
 		font-size 25px
 	img
-		width auto
+		width 63px
+		&.brand
+			width 75px
 		
 .container-grid-advertise
 	margin-top 60px
@@ -724,6 +738,7 @@ header
 .advertise-btn
 	font-size 12px
 	margin 80px 0
+	border-width 2px
 	
 .partnership-section
 	background #f5f5f5
@@ -844,12 +859,21 @@ header
 		&:hover
 			background linear-gradient($red, $orange)
 			color white
+		&:disabled
+			opacity 0.7
 ::placeholder
 	color rgba($gray, 50%)
 	
 
 footer
 	padding 50px 0
+	.kanan
+		img
+			width 30px
+			&.facebook
+				width 35px
+		a
+			margin 0 5px
 	.flex
 		align-items baseline
 	@media(max-width: 576px)
@@ -878,6 +902,36 @@ footer
 			p
 				font-size 16px
 				
+				
+// email
+#response
+	font-size 16px
+	color #555
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	&.success
+		color #2ecc71
+	&.fail
+		color #e74c3c
+
+.loader
+	display block
+	margin-left auto
+	margin-right auto
+	&.d-none
+		display none
+.status
+	position absolute
+	width 100px
+	bottom 30px
+	left 50%
+	transform translateX(-50%)
 
 // landscape mobile
 @media only screen and (min-device-width: 480px) and (max-device-width: 812px) and (orientation: landscape)

@@ -47,6 +47,47 @@ util = {
 	}
 }
 
+form = {
+	submitForm: function(){
+		$("#subs").submit(function(event) {
+			form.wait();
+			event.preventDefault();
+			$.ajax({
+				url: 'email.php',
+				data: $(this).serialize(),
+				success: function(data)
+				{
+					form.success(data);
+				},
+				dataType: 'json'
+			});
+		});
+	},
+
+	success: function(res){
+		switch(res.status){
+			case 'success':
+				$("#response").removeClass().addClass('success');
+				$("#response").html('Success')
+				$(".loader").addClass('hidden')
+				$("#sbmt").attr('disabled', false);
+			break;
+			case 'fail':
+				$("#response").removeClass().addClass('fail');
+				$("#response").html('Fail')
+				$(".loader").addClass('hidden')
+				$("#sbmt").attr('disabled', false);
+			break;
+		}
+	},
+
+	wait: function(){
+		$("#response").empty();
+		$("#sbmt").attr('disabled', true);
+		$(".loader").removeClass('hidden')
+	}
+}
+
 navbar = {
 	hamburgerClick : function(){
 		$(".hamburger").click(function(event) {
@@ -117,6 +158,7 @@ fullpage = {
 
 function init(){
 	//fullpage.init()
+	form.submitForm();
 	navbar.hamburgerClick()
 	navbar.click();
 	navbar.headerClick();
